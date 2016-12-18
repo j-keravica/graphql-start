@@ -54,4 +54,9 @@ const resolvers = {
 server.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true,
+  rootValue: resolvers
 }));
+
+server.listen(PORT, () => {
+  console.log(`Listening on http://localhost:${PORT}`);
+});
