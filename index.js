@@ -51,20 +51,6 @@ const resolvers = {
   videos: () => videos
 };
 
-const query = `
-query myFirstQuery {
-  videos {
-    id,
-    title,
-    duration,
-    watched
-  }
-}`;
-
-graphql(schema, query, resolvers)
-  .then((result) => console.log(result))
-  .catch((error) => console.log(error));
-
 server.use('/graphql', graphqlHTTP({
   schema,
   graphiql: true,
